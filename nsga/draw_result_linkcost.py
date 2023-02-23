@@ -1,0 +1,59 @@
+
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+
+# capital 30000
+nsga_linkcostXn = [1953.4640120687427, 1723.6870913951495, 1833.4206222128116, 2037.8253785472282, 1948.6924440915657, 1969.5182175518516, 1814.6469405039097, 1928.345911533494, 1936.2923475936495, 2025.1593679278985, 1800.6271024945468, 1759.4896641168828]
+nsga_linkcostN2 = [16276.691611417687, 12419.96727190915, 14129.465230451613, 17754.518093498504, 16598.037051740088, 14250.878598181536, 14509.462497353392, 14663.930235328451, 14414.315848672119, 17461.738211511227, 14252.610176669097, 14282.33888727134]
+nsga_linkcostSr = [5083.823362049574, 3915.064265106805, 4436.802286651929, 5535.2242429055395, 5176.312915177994, 4474.4850778861455, 4543.705338238391, 4612.259284749952, 4542.414696113532, 5455.098039994115, 4467.190868788456, 4484.038167332831]
+nsga_linkcostSe = [8828.466724893142, 8525.520883512861, 9085.250168719991, 9218.564022130457, 9292.495170041017, 9203.280350454612, 10679.524163667134, 11187.605619821648, 10379.378928424936, 9721.914889956466, 9219.026215840684, 9116.748802308037]
+
+# 16000
+nsga_linkcostXn_2 = [2358.7653605409755, 2163.4263386358193, 2223.592332834893, 2455.8075497670493, 3128.864470027789, 2424.8163951349275, 2085.9727530171444, 2476.4549328956837, 2226.9528787497816, 2473.6678180542913, 2323.577291073915, 2397.1285963844252]
+nsga_linkcostN2_2 = [22320.57956515411, 19953.405997723694, 19742.75538911459, 23918.02950285896, 35331.4894667196, 21102.46579494167, 19026.75031759468, 20022.469319956617, 20114.770573368078, 25211.39852569448, 22247.3841858003, 20992.603874963574]
+nsga_linkcostSr_2 = [6914.779970092769, 6193.2615468092945, 6152.401063928334, 7399.655310249894, 10860.755617308465, 6570.039280562205, 5910.317078657632, 6240.59300632659, 6248.234031572941, 7787.405883987723, 6902.510381790508, 6583.076930203049]
+nsga_linkcostSe_2 = [9599.932510222721, 9201.380641062953, 9795.629768820547, 10751.67613034731, 13263.915270610034, 10800.40777405736, 10963.668536946865, 12909.944370913603, 10973.079951304066, 9963.382432736482, 9979.961595977002, 10114.327704401652]
+
+ground_linkcostXn = [2009.6786824936712, 2069.1273259045606, 2155.526922415268, 2117.520912748833, 2026.568744210673, 2158.2142034701355, 3565.755425576966, 3616.632038012571, 3075.176483042439, 2462.4199785603664, 2351.1058691192984, 2187.022643656865]
+ground_linkcostN2 = [34265.357603186676, 35278.966914586694, 36752.09448318756, 36104.085662854806, 34553.33597988617, 36797.91307455102, 60796.726286258716, 61664.18103608005, 52432.27327943258, 41984.67241037035, 40086.74823000068, 37289.10179719964]
+ground_linkcostSr = [10391.181415167966, 10698.564701834342, 11145.299739311096, 10948.787060567529, 10478.512637289925, 11159.194510250252, 18436.982902815984, 18700.043915610033, 15900.410845430206, 12732.111327272027, 12156.554092503153, 11308.150525396477]
+ground_linkcostSe = [4655.554699802821, 4780.0190836664115, 4960.909208802535, 4881.338098263442, 4690.916501257105, 4966.535422649847, 7913.427747194582, 8019.945337109897, 6886.329359145707, 5603.434470163181, 5370.382187520678, 5026.850083375256]
+# def draw_24_time(result_24_time):
+x = [i for i in range(12)]
+fig = plt.figure()
+
+plt.rcParams['xtick.direction'] = 'in'#将x周的刻度线方向设置向内
+plt.rcParams['ytick.direction'] = 'in'#将y轴的刻度方向设置向内
+plt.tick_params(top='on', right='on', which='both')
+plt.grid()# 设置xtick和ytick的方向：in、out、inout
+
+plt.subplot(141)
+plt.plot(x, ground_linkcostXn, color="fuchsia", linestyle='solid', label='Svenario 3', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostXn, color="blue", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostXn_2, color="red", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.subplot(142)
+plt.plot(x, ground_linkcostN2, color="fuchsia", linestyle='solid', label='Svenario 3', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostN2, color="blue", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostN2_2, color="red", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.subplot(143)
+plt.plot(x, ground_linkcostSr, color="fuchsia", linestyle='solid', label='Svenario 3', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostSr, color="blue", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostSr_2, color="red", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.subplot(144)
+plt.plot(x, ground_linkcostSe, color="fuchsia", linestyle='solid', label='Svenario 3', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostSe, color="blue", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.plot(x, nsga_linkcostSe_2, color="red", linestyle='solid', label='Svenario 5', linewidth=1, marker='o',
+         markerfacecolor='none', markersize='5', )
+plt.show()

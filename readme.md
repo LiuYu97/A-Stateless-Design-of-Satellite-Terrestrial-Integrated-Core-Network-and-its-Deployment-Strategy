@@ -1,17 +1,17 @@
 ## Requires  
-1. stk11.6  
-2. ubuntu18.04 
-3. NS3-3.33  
+1. stk11.6 (windows)  
+3. NS3-3.33 (ubuntu18.04)  
 4. python3.8  
 
 ## Usage
+1. Build connection between `python` and `stk11.6`.
 1. Run `main` in STK to obtain the `Sat_load` and `data` for each time slot.
 
-1. Set `compute_nsga2=True` and others to `False` in `main`. Calculate the deployment position of NFs stored in `opl.txt`.
+1. Set `compute_nsga2=True` and others to `False` in `main`. Run main to calculate the Pate of NFs stored in `opl.txt`.
 
 1. Set `Test_nsga2=True` and others to `False` in `main`. Select the deployment of P-S with more NF instances. Calculate the linkcost of P-S.
 
-1. Copy the linkcost to `draw_result`.
+1. Copy the linkcost to `draw_git result`.
 
 1. Copy the files in `ns3/ns3` to `NS3-3.33`.
 

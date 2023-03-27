@@ -6,48 +6,31 @@
 ## Usage
 1. Build connection between `python` and `stk11.6`.
 1. Run `main` in STK to obtain the `Sat_load` and `data` for each time slot.
-
-1. Set `compute_nsga2=True` and others to `False` in `main`. Run main to calculate the Pate of NFs stored in `opl.txt`.
-
-1. Set `Test_nsga2=True` and others to `False` in `main`. Select the deployment of P-S with more NF instances. Calculate the linkcost of P-S.
-
-1. Copy the linkcost to `draw_git result`.
-
-1. Copy the files in `ns3/ns3` to `NS3-3.33`.
-
-1. Copy `order_nsga`, `Sat_load`, `data`, `amf_processs_time`, `smf_processs_time`, `upf_processs_time`, and `ns3_process_time_nfs` to `NS3-3.33`.
-
-1. Copy the deployment result to `XnNsga.cc` in `NS3`.
-
-1. Run `getResult.py` in `ns3/ns3`.
-
-1. Copy the result in `NS3` to the `ns3` folder.
-
-1. Set `Test_nsga2=True` and others to `False` in `main`. Select the deployment of C-S with fewer NF instances. Calculate the linkcost of C-S.
-
-1. Copy the linkcost to `draw_result`.
-
-1. Copy `order_nsga`, `Sat_load`, `data`, `amf_processs_time`, `smf_processs_time`, `upf_processs_time`, and `ns3_process_time_nfs` to `NS3-3.33`.
-
-1. Copy the deployment result to `XnNsga.cc` in `NS3`.
-
-1. Run getResult.py in `ns3/ns3`.
-
-1. Copy the result in `NS3` to the `ns3` folder.
-
-1. Set `Test_nsga2=True`, `ground_CN=True`, and others to `False` in `main`. Calculate the linkcost of B-P.
-
-1. Copy the linkcost to `draw_result`.
-
+1. Set `Test_nsga2=True`, `ground_CN=True`, and others to `False` in `main`. Run `main` Calculate the linkcost of B-P.
+1. Copy the deployment result of linkcost to `draw_result`.
 1. Copy `order`, `Sat_load`, and `data` to `NS3-3.33`.
-
 1. Copy the deployment result to `XnNsga.cc` in `NS3`.
-
+1. Modify path of files in `XnNsga.cc` of `NS3`.  
+1. Set the path of result in `NS3`.
+1. Set `compute_nsga2=True` and others to `False` in `main`. Run `main` to calculate the Pareto Front of NFs stored in `opl.txt`.
+1. Set `Test_nsga2=True` and others to `False` in `main`. Select the deployment of P-S with more NF instances from `opl.txt`. Run `main` to calculate the linkcost of P-S.
+1. Copy the result of linkcost to `draw_git result`.
+1. Copy the files in `ns3/ns3` to `NS3-3.33`.
+1. Copy `order_nsga`, `Sat_load`, `data`, `amf_processs_time`, `smf_processs_time`, `upf_processs_time`, and `ns3_process_time_nfs` to `NS3-3.33`.
+1. Modify path of files in `XnNsga.cc` of `NS3`.  
+1. Copy the deployment result to `XnNsga.cc` in `NS3`.
+1. Set the path of result in `NS3`.  
 1. Run `getResult.py` in `ns3/ns3`.
-
-1. Copy the result in `NS3` to the `ns3` folder.
-
-1. Use `draw_result` in `NS3` to draw the time and packet loss rate images.
+1. Copy the result to `ns3` folder and rename it `result_P-S_B-P`.
+1. Set `Test_nsga2=True` and others to `False` in `main`. Select the deployment of C-S with fewer NF instances from `opl.txt`. Run `main` Calculate the linkcost of C-S.
+1. Copy the result of  linkcost to `draw_result`.
+1. Copy `order_nsga`, `Sat_load`, `data`, `amf_processs_time`, `smf_processs_time`, `upf_processs_time`, and `ns3_process_time_nfs` to `NS3-3.33`.
+1. Copy the deployment result to `XnNsga.cc` in `NS3`.
+1. Modify path of files in `XnNsga.cc` of `NS3`.
+1. Set the path of result in `NS3`.
+1. Run getResult.py in `ns3/ns3`.
+1. Copy the result to `ns3` folder and rename it `result_C-S`.  
+1. Use `draw_result` in `NS3` to draw the time and packet loss rate images.  
 
 
 

@@ -60,14 +60,14 @@ Read the stk running results and calculate the deployment position of NF instanc
 --- amf_processs_time: The processing time amf runs on each satellite.  
 --- smf_processs_time: The processing time of smf running on each satellite.  
 --- upf_processs_time: The processing time for upf to run on each satellite.  
---- loadsum: the cumulative number of people at all times for each satellite.
---- ns3_process_time_nfs: The processing time of each NF instance. The first row represents AMF, the second represents SMF, and the third represents UPF. 
+--- loadsum: the cumulative number of people at all times for each satellite.  
+--- ns3_process_time_nfs: The processing time of each NF instance. The first row represents AMF, the second represents SMF, and the third represents UPF.   
 --- hopMean: The average number of hops between any two satellite nodes in the total time range.  
 --- delayMean: The average delay of any two satellite nodes within the total time range.  
 --- P_T_time: The time consumed by the calculation process, used for nsga to calculate fitness.  
 --- linkcost_compute: Calculate the linkcost of the process, used to calculate the fitness of nsga  
 --- NF: Calculate the processing time of network elements.  
---- kmeans: Kmeans algorithm. Initial population used to calculate NSGA
+--- kmeans: Kmeans algorithm. Initial population used to calculate NSGA.  
 --- near_core_sat: The five satellites closest to the five ground core networks at each moment.  
 --- order: The core network is all on the ground, the satellites are only for transmission, the row is each satellite, and the column is the satellite connected to the target core network  
 --- order_Nsga: deploy amf, smf, upf in the satellite. Rows are each satellite, columns are target amf, smf, upf, ground connected satellites. is the next hop location for signaling transmission.    
